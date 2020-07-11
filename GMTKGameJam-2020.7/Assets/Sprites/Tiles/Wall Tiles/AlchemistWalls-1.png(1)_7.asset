@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: AlchemistWalls-1.png(1)_7
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -5652134017232614587, guid: c4e2ab61b3cfd2b4693856e28b950a96,
+  m_Sprite: {fileID: -5652134017232614587, guid: eaea830e775c1204f9ba72fd35b4e56a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
@@ -34,4 +34,4 @@ MonoBehaviour:
     e33: 1
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
-  m_ColliderType: 2
+  m_ColliderType: 1
