@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PotionManager : MonoBehaviour
 {
-    public static PotionManager Instance {set; private get;}
+    public static PotionManager Instance {get; private set;}
     
     public List<Potion> potionList;
 
