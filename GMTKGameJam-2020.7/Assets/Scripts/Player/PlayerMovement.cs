@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement Instance {get; private set;}
     public float moveSpeed = 5f;
     
     //public Rigidbody2D rb;
@@ -12,6 +13,14 @@ public class PlayerMovement : MonoBehaviour
     Vector3 movement;
     Vector3 axis;
     
+    void Start(){
+        Instance = this;
+    }
+
+    void Awake(){
+        Instance = this;
+    }
+
     void Update()
     {
         movement.x = axis.x = Input.GetAxisRaw("Horizontal");
