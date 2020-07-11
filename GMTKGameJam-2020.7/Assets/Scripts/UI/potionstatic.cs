@@ -17,7 +17,7 @@ public class potionstatic : MonoBehaviour
 
     public KeyCode[] PotionKeys;
 
-    float[] Timer = new float[3];
+    public float[] Timer = new float[3];
 
 
     // Start is called before the first frame update
