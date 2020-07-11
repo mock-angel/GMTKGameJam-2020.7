@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 955848572647473304}
   - component: {fileID: 955848572647473305}
   - component: {fileID: 955848572647473310}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tilemap_Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8624,7 +8624,7 @@ Tilemap:
   - m_RefCount: 945
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 0
-    m_Data: {r: 0.7234877, g: 0.29616505, b: 0.4105598, a: 1}
+    m_Data: {r: 0.8826737, g: 0.52333176, b: 0.5483617, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8753,22 +8753,14 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 955848572647473304}
     m_ColliderPaths:
-    - - X: 120000100
-        Y: -80000041
-      - X: 120000100
-        Y: 75000041
-      - X: 120000041
-        Y: 75000100
-      - X: -125000041
-        Y: 75000100
-      - X: -125000100
-        Y: 75000041
-      - X: -125000100
-        Y: -80000041
-      - X: -125000041
-        Y: -80000100
-      - X: 120000041
-        Y: -80000100
+    - - X: 120000000
+        Y: 75000000
+      - X: -125000000
+        Y: 75000000
+      - X: -125000000
+        Y: -80000000
+      - X: 120000000
+        Y: -80000000
     - - X: -90000000
         Y: -45000000
       - X: -90000000
@@ -8803,10 +8795,10 @@ CompositeCollider2D:
         Y: -45000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 11.999974, y: -8.00001}
-      - {x: 11.999974, y: 7.5000095}
-      - {x: -12.50001, y: 7.4999743}
-      - {x: -12.499974, y: -8.00001}
+    - - {x: 11.99997, y: -8}
+      - {x: 11.99997, y: 7.5}
+      - {x: -12.5, y: 7.4999704}
+      - {x: -12.49997, y: -8}
     - - {x: 7, y: -4.4999704}
       - {x: -9, y: -4.4999704}
       - {x: -9.000008, y: -4.0312424}
@@ -8835,7 +8827,7 @@ GameObject:
   m_Component:
   - component: {fileID: 955848572985237523}
   - component: {fileID: 955848572985237520}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}

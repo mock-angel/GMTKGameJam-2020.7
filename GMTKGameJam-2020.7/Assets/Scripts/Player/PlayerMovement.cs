@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement Instance {get; private set;}
     public float moveSpeed = 5f;
     
-    public Rigidbody2D rb;
+    //public Rigidbody2D rb;
     public Animator animator;
     
     Vector3 movement;
     Vector3 axis;
     
+    void Start(){
+        Instance = this;
+    }
+
+    void Awake(){
+        Instance = this;
+    }
+
     void Update()
     {
         movement.x = axis.x = Input.GetAxisRaw("Horizontal");
@@ -38,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
     
     void FixedUpdate()
     {   
-        transform.position = transform.position + (movement * moveSpeed * Time.deltaTime);
+        transform.position = transform.position + (movement * moveSpeed * Time.fixedDeltaTime);
 //        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 }
