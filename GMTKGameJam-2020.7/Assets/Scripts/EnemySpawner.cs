@@ -34,7 +34,7 @@ public class EnemySpawner : MonoBehaviour
     //Manage Enemy epawn here.
     void SpawnEnemy(){
 
-        Instantiate(EnemyPrefab);
-
+        GameObject obj = Instantiate(EnemyPrefab);
+        obj.GetComponent<EnemyController>().targetPosition = PlayerMovement.Instance.transform;
     }
 }
