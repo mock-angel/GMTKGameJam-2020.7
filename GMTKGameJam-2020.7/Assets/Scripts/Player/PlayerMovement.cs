@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     
     void FixedUpdate()
     {   
-        transform.position = transform.position + (movement * moveSpeed * Time.deltaTime);
+        transform.position = transform.position + (movement * moveSpeed * Time.fixedDeltaTime);
 //        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 }
