@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;
     
     public Rigidbody2D rb;
+    public Animator animator;
     
     Vector3 movement;
     Vector3 axis;
@@ -15,7 +16,13 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = axis.x = Input.GetAxisRaw("Horizontal");
         movement.y = axis.y = Input.GetAxisRaw("Vertical");
-        
+
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
+
+
+
         if (Mathf.Abs(axis.x) == 1 && Mathf.Abs(axis.y) == 1)
         {
             movement.x = Mathf.Sqrt(0.5f) * axis.x;
