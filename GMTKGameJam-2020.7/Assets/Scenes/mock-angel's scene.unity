@@ -163,7 +163,7 @@ Transform:
   m_Children:
   - {fileID: 385983872}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &385983871
 GameObject:
@@ -2299,6 +2299,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 434217529}
+  - component: {fileID: 434217530}
   m_Layer: 0
   m_Name: Enemy Spawner
   m_TagString: Untagged
@@ -2318,8 +2319,59 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &434217530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434217528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a949b69f33fe6756782630b75c86aaf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameStarted: 1
+  TickLength: 1
+  EnemySpawnedPerTick: 1
+  EnemyPrefab: {fileID: 70598192123686784, guid: e387afd7fb3d2c8f6946c4525aac2747,
+    type: 3}
+--- !u!1001 &686135671
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 70598192123686784, guid: e387afd7fb3d2c8f6946c4525aac2747,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 70598192123686788, guid: e387afd7fb3d2c8f6946c4525aac2747,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 70598192123686788, guid: e387afd7fb3d2c8f6946c4525aac2747,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 70598192123686788, guid: e387afd7fb3d2c8f6946c4525aac2747,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 70598192123686788, guid: e387afd7fb3d2c8f6946c4525aac2747,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e387afd7fb3d2c8f6946c4525aac2747, type: 3}
 --- !u!213 &772674372
 Sprite:
   m_ObjectHideFlags: 0
@@ -2645,7 +2697,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3052794379385599671
 PrefabInstance:
