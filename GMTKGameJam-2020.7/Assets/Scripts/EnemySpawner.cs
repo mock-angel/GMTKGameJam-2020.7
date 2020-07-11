@@ -12,9 +12,13 @@ public class EnemySpawner : MonoBehaviour
 
     [Tooltip("How much enemy to spawn during next tick.")]
     [Range(0, 20)]
-    public float EnemySpawnedPerTick = 1;
+    [SerializeField] private float EnemySpawnedPerTick = 1;
 
-    [SerializeField] private GameObject EnemyPrefab;
+    [SerializeField] private ObjectPooler objectPooler;
+
+
+    [SerializeField] private string meleeEnemyString = "Melee Golem";
+    [SerializeField] private string rangedEnemyString = "Ranged Wizard";
 
     private float totalTime = 0;
 
@@ -33,8 +37,8 @@ public class EnemySpawner : MonoBehaviour
 
     //Manage Enemy epawn here.
     void SpawnEnemy(){
-
-        GameObject obj = Instantiate(EnemyPrefab);
+        GameObject obj = objectPooler.SpawnFromPool(meleeEnemyString, transform.position, Quaternion.identity);
+        //GameObject obj = Instantiate(EnemyPrefab);
         obj.GetComponent<EnemyController>().targetPosition = PlayerMovement.Instance.transform;
     }
 }

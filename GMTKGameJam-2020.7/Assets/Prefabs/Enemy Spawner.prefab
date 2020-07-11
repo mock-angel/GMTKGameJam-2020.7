@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2128221116536427334}
   - component: {fileID: 2128221116536427333}
+  - component: {fileID: 7216707765304889796}
   m_Layer: 0
   m_Name: Enemy Spawner
   m_TagString: Untagged
@@ -46,5 +47,29 @@ MonoBehaviour:
   GameStarted: 1
   TickLength: 3
   EnemySpawnedPerTick: 1
-  EnemyPrefab: {fileID: 70598192123686784, guid: e387afd7fb3d2c8f6946c4525aac2747,
-    type: 3}
+  objectPooler: {fileID: 7216707765304889796}
+  meleeEnemyString: Melee Golem
+  rangedEnemyString: Ranged Wizard
+--- !u!114 &7216707765304889796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128221116536427335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 326c375442e5952a1884a7c6b85a9b43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useAsSingleton: 1
+  pools:
+  - tag: Melee Golem
+    prefab: {fileID: 70598192123686784, guid: e387afd7fb3d2c8f6946c4525aac2747, type: 3}
+    size: 0
+  - tag: Ranged Plage Thrower
+    prefab: {fileID: 0}
+    size: 0
+  - tag: Ranged Wizard
+    prefab: {fileID: 0}
+    size: 0
