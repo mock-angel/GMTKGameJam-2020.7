@@ -10,7 +10,7 @@ public enum SpellsEnum{
 
 public class Potion : MonoBehaviour
 {
-    public GameObject rangeCircle;
+    //public GameObject rangeCircle;
 
     public SpellsEnum spellType;
 
@@ -19,6 +19,8 @@ public class Potion : MonoBehaviour
 
     public KeyCode keyCode;
 
+    
+
     public void CasteSpell(){
         StartCoroutine("StartCasteSpells");
     }
@@ -26,8 +28,11 @@ public class Potion : MonoBehaviour
     IEnumerator StartCasteSpells(){
 
         //Activate spell.
-        rangeCircle.SetActive(true);
+        //rangeCircle.SetActive(true);
 
+        PotionManager.Instance.isSpellActive = true;
+
+        PotionManager.Instance.isSpellActive = true;
         switch (spellType){
             case (SpellsEnum.FIRE): 
                 StartFireSpell(true);
@@ -44,7 +49,7 @@ public class Potion : MonoBehaviour
         yield return new WaitForSeconds(SpellDuration);
 
         //Deactivate spell after waiting.
-        rangeCircle.SetActive(false);
+        //rangeCircle.SetActive(false);
 
         switch(spellType){
             case (SpellsEnum.FIRE): 
