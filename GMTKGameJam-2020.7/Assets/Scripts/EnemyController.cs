@@ -4,7 +4,7 @@ using UnityEngine;
 
 using Pathfinding;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : MonoBehaviourPooledObject
 {
     public float speed = 2f;
 
