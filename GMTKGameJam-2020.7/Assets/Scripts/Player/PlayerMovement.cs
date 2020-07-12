@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody2D rb;
 
+    public GameObject secondaryObjectToMove;
 
     void Start(){
         Instance = this;
@@ -74,47 +75,79 @@ public class PlayerMovement : MonoBehaviour
     {   
         //transform.position = transform.position + (movement * moveSpeed * Time.fixedDeltaTime);
         rb.MovePosition(rb.position + ((new Vector2(movement.x, movement.y)) * moveSpeed * Time.fixedDeltaTime));
+        secondaryObjectToMove.transform.position = transform.position;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-       if (collision.gameObject.tag == "Enemy" && GetComponent<CircleCollider2D>().isTrigger)
+       if (collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("Player takes damage");
-
-            //Destroy Enemy Object
-            GameObject.Destroy(collision.gameObject);
-
-            //Player Takes Damage
-            HealthBar.Damage(golemDamage);
-
-
-            //Health points -=10
-            HealthBar.HP -= golemDamage;
-
-            //play sound
-            AudioManager.AudioManagerProp.PlaySFX(TakeDamgeSFX);
-
-
-            health -= golemDamage;
-
-            
-            //if player is dead
-            if (HealthBar.HP < 0 && health < 0) 
-            {
-                //Death Animation
-                animator.SetBool("IsDead", true);
-
-                gameObject.GetComponent<SpriteRenderer>().enabled = false;
-
-                GameManager.GameIsPaused = true;
-
-            }
-
+            PlayerMovement.Instance.OnCircleCollision(collision);
         }
-
-        
     }
 
+    public void OnCircleCollision(Collision2D collision){
+        Debug.Log("Player takes damage");
+
+        //Destroy Enemy Object
+        GameObject.Destroy(collision.gameObject);
+
+        //Player Takes Damage
+        HealthBar.Damage(golemDamage);
+
+
+        //Health points -=10
+        HealthBar.HP -= golemDamage;
+
+        //play sound
+        AudioManager.AudioManagerProp.PlaySFX(TakeDamgeSFX);
+
+
+        health -= golemDamage;
+
+        
+        //if player is dead
+        if (HealthBar.HP < 0 && health < 0) 
+        {
+            //Death Animation
+            animator.SetBool("IsDead", true);
+
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+
+            GameManager.GameIsPaused = true;
+
+        }
+    }
+    
+    public void OnDamageTaken(int damageFromBullet){
+        //Player Takes Damage
+        HealthBar.Damage(damageFromBullet);
+
+        //Health points -=10
+        HealthBar.HP -= damageFromBullet;
+
+        //play sound
+        AudioManager.AudioManagerProp.PlaySFX(TakeDamgeSFX);
+
+
+        health -= damageFromBullet;
+
+        
+        //if player is dead
+        if (HealthBar.HP < 0 && health < 0) 
+        {
+            //Death Animation
+            animator.SetBool("IsDead", true);
+
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+
+            GameManager.GameIsPaused = true;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        potionstatic.Instance.OnTriggeredFireCircle(collision);
+    }
 
 }

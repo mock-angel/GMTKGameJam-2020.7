@@ -29,12 +29,12 @@ public class IcePot : MonoBehaviour
         {
             FrameTracker = 0;
             transform.parent.GetComponent<PlayerMovement>().enabled = true;
-            transform.parent.GetComponent<CircleCollider2D>().isTrigger = true;
+            GetComponent<CircleCollider2D>().enabled = false;
         }
         else
         {
             transform.parent.GetComponent<PlayerMovement>().enabled = false;
-            transform.parent.GetComponent<CircleCollider2D>().isTrigger = false;
+            GetComponent<CircleCollider2D>().enabled = true;
         }
 
         if (Timer % (60f / Fps) == 0)
@@ -53,4 +53,12 @@ public class IcePot : MonoBehaviour
 
 
     }
+    /*
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+       if (collision.gameObject.tag == "Enemy" && GetComponent<CircleCollider2D>().enabled)
+        {
+            PlayerMovement.Instance.OnCircleCollision(collision);
+        }
+    }*/
 }

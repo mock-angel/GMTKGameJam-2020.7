@@ -30,20 +30,32 @@ public class EnemySpawner : MonoBehaviour
 
     public Image ScreenTint;
     float FuckeryLevel = 3;
-    int TImer;
+
+    int totalTicks = 0;
+
+
+    public List<int> levelsAfterTick;
+
+    void Start(){
+        SpawnRangedEnemy();
+    }
 
     void Update()
     {
-        TImer++;
         if(GameStarted){
             
             totalTime += Time.deltaTime;
             if(totalTime >= TickLength){
                 totalTime -= TickLength;
 
+
+                totalTicks++;
+
+                CalculateLevel();
+
                 //SpawnEnemy();
                 CauldronEvent();
-
+            
             }
         }
         
@@ -55,36 +67,70 @@ public class EnemySpawner : MonoBehaviour
         float temp = FuckeryLevel * 0.01f;
 
         ScreenTint.color += new Color(0,0,0,-0.01f);
+    }
 
+    int level;
 
-  
+    void CalculateLevel(){
         
+        level = 0;
+
+        for(int i = 0; i< levelsAfterTick.Count; i++){
+            int levelTickRequirement = levelsAfterTick[i];
+
+            if(totalTicks > levelTickRequirement) level++;
+        }
     }
 
     //Manage Enemy epawn here.
-    void SpawnEnemy(){
+    void SpawnMeleeEnemy(){
         GameObject obj = objectPooler.SpawnFromPool(meleeEnemyString, transform.position, Quaternion.identity);
         //GameObject obj = Instantiate(EnemyPrefab);
         obj.GetComponent<EnemyController>().targetPosition = PlayerMovement.Instance.transform;
     }
 
+    void SpawnRangedEnemy(){
+        GameObject obj = objectPooler.SpawnFromPool(rangedEnemyString, transform.position, Quaternion.identity);
+        //GameObject obj = Instantiate(EnemyPrefab);
+        obj.GetComponent<EnemyController>().targetPosition = PlayerMovement.Instance.transform;
+    }
+    
+    int lowerLimit = 0;
+    int upperLimit = 0;
+
+    int maxUpperLimit = 7;
+
     void CauldronEvent()
     {
         ScreenTint.color = new Color(Random.Range(0f,1f), Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
-        switch (Random.Range(1, 7))
+
+        upperLimit = level;
+
+        int selectedNum = Random.Range(lowerLimit, upperLimit);
+
+        switch (selectedNum)
         {
-            case (1):
-                SpawnEnemy();
+            case (0):
+                SpawnMeleeEnemy();
                 AudioManager.AudioManagerProp.PlaySFX(cauldronBubbling);
                 break;
+            
+            case (1):
+                SpawnRangedEnemy();
+                AudioManager.AudioManagerProp.PlaySFX(cauldronBubbling);
+                break;
+
             case (2):
                 //set everything on fire
+                SetOnFire();
                 break;
             case (3):
                 //put poison tiles everywhere
+                SpillPoison();
                 break;
             case (4):
                 //put cobwebs everywhere
+                LitterCobWebs();
                 break;
             case (5):
                 Sign = (Random.Range(1, 2) == 1 ? 1 : -1);
@@ -94,20 +140,21 @@ public class EnemySpawner : MonoBehaviour
                 break;
             case (6):
                 FuckeryLevel++;
-                print("FUCKERY LEVEL : " + FuckeryLevel);
-
-                
+                //print("FUCKERY LEVEL : " + FuckeryLevel);
                 break;
-
-
         }
 
-                
+    }
 
+    void SetOnFire(){
 
+    }
 
+    void SpillPoison(){
 
+    }
 
+    void LitterCobWebs(){
 
     }
 }

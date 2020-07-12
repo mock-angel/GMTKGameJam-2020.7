@@ -21,7 +21,6 @@ public class EnemyController : MonoBehaviourPooledObject
     private bool reachedEndOfPath = false;
 
     void Start(){
-        seeker = GetComponent<Seeker>();
 
         destinationSetter.target = targetPosition;
 
@@ -33,7 +32,7 @@ public class EnemyController : MonoBehaviourPooledObject
     }
 
     public void OnPathComplete (Path p) {
-        Debug.Log("A path was calculated. Did it fail with an error? " + p.error);
+        Debug.Log("A path was calculated. " + p.error);
 
         if (!p.error) {
             path = p;
@@ -53,24 +52,19 @@ public class EnemyController : MonoBehaviourPooledObject
             // We have no path to follow yet, so don't do anything
             return;
         }
-        print("hello there");
-        // Check in a loop if we are close enough to the current waypoint to switch to the next one.
-        // We do this in a loop because many waypoints might be close to each other and we may reach
-        // several of them in the same frame.
+
+
         reachedEndOfPath = false;
-        // The distance to the next waypoint in the path
+
         float distanceToWaypoint;
         while (true) {
-            // If you want maximum performance you can check the squared distance instead to get rid of a
-            // square root calculation. But that is outside the scope of this tutorial.
+
             distanceToWaypoint = Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]);
             if (distanceToWaypoint < nextWaypointDistance) {
-                // Check if there is another waypoint or if we have reached the end of the path
+
                 if (currentWaypoint + 1 < path.vectorPath.Count) {
                     currentWaypoint++;
                 } else {
-                    // Set a status variable to indicate that the agent has reached the end of the path.
-                    // You can use this to trigger some special code if your game requires that.
                     reachedEndOfPath = true;
                     break;
                 }
@@ -81,8 +75,6 @@ public class EnemyController : MonoBehaviourPooledObject
 
         var speedFactor = reachedEndOfPath ? Mathf.Sqrt(distanceToWaypoint/nextWaypointDistance) : 1f;
 
-        // Direction to the next waypoint
-        // Normalize it so that it has a length of 1 world unit
         Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
 
         Vector3 velocity = dir * speed * speedFactor;
@@ -96,7 +88,7 @@ public class EnemyController : MonoBehaviourPooledObject
 
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+        //animator.SetFloat("Speed", movement.sqrMagnitude);
 
         if (Mathf.Abs(axis.x) == 1 && Mathf.Abs(axis.y) == 1)
         {

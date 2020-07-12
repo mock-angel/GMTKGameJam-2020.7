@@ -530,7 +530,7 @@ GameObject:
   - component: {fileID: 720837398}
   - component: {fileID: 720837401}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Jam Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -550,10 +550,10 @@ RectTransform:
   m_Father: {fileID: 2123439363}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -11}
-  m_SizeDelta: {x: 254.43411, y: 144.63239}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 106.11272, y: -135.11}
+  m_SizeDelta: {x: 212.22543, y: 83.403694}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &720837398
 MonoBehaviour:
@@ -879,7 +879,7 @@ GameObject:
   - component: {fileID: 1265036179}
   - component: {fileID: 1265036182}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Leave Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -899,10 +899,10 @@ RectTransform:
   m_Father: {fileID: 2123439363}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -167}
-  m_SizeDelta: {x: 257.21707, y: 129.29199}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 106.11272, y: -218.50923}
+  m_SizeDelta: {x: 212.22543, y: 83.403694}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1265036179
 MonoBehaviour:
@@ -946,7 +946,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1265036180}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1265036182}
+        m_MethodName: onExitCall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1265036180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -993,13 +1004,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1265036177}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7c0f73d801ab4b4a943cce82ca3ade4, type: 3}
+  m_Script: {fileID: 11500000, guid: a9e252079dea25dcc891a5d6226ccc09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Main: {fileID: 2123439363}
-  Page: {fileID: 1139228695}
-  gotojam: 0
-  leave: 0
 --- !u!1 &1643617016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,7 +1241,7 @@ GameObject:
   - component: {fileID: 1987673620}
   - component: {fileID: 1987673623}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Start Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1254,10 +1261,10 @@ RectTransform:
   m_Father: {fileID: 2123439363}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 141}
-  m_SizeDelta: {x: 257.24283, y: 129.29198}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 106.11272, y: -41.701847}
+  m_SizeDelta: {x: 212.22543, y: 83.403694}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1987673620
 MonoBehaviour:
@@ -1371,6 +1378,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2123439363}
+  - component: {fileID: 2123439364}
   m_Layer: 5
   m_Name: Main
   m_TagString: Untagged
@@ -1397,6 +1405,31 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -0.0000066757, y: -0.0000097752}
+  m_SizeDelta: {x: 212.22543, y: 260.2111}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2123439364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123439362}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 5
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0

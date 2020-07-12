@@ -27,10 +27,16 @@ public class potionstatic : MonoBehaviour
 
     CircleCollider2D C;
 
+    public static potionstatic Instance {get; private set;}
+
+    void Awake(){
+        Instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+        Instance = this;
 
         PotCol[0] = Fire;
         PotCol[1] = Ice;
@@ -95,9 +101,16 @@ public class potionstatic : MonoBehaviour
         Effect[ID - 1].GetComponent<PotSelect>().DoHighlight = true;
 
     }
-
+    /*
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if(collision.tag == "Enemy" && Timer[0] != 0)
+        {
+            collision.transform.Find("OnFire").GetComponent<SpriteRenderer>().color = Color.white;
+        }
+    }*/
+
+    public void OnTriggeredFireCircle(Collider2D collision){
         if(collision.tag == "Enemy" && Timer[0] != 0)
         {
             collision.transform.Find("OnFire").GetComponent<SpriteRenderer>().color = Color.white;
