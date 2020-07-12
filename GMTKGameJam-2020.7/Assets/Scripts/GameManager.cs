@@ -20,9 +20,14 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject pausePanel;
 
+    [SerializeField]
+    private GameObject NextLevelPanel;
+
     public static bool GameIsPaused = false;
 
     public static GameManager Instance {get; private set;}
+
+    public int level = 1; 
 
     void Awake(){
         Instance = this;
@@ -31,7 +36,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Instance = this;
-
+        Resume();
+        
         GOPanel.SetActive(false);
         pausePanel.SetActive(false);
         AudioManager.AudioManagerProp.PlayMusic(music);
@@ -43,11 +49,23 @@ public class GameManager : MonoBehaviour
 
         CheckForPause();
         GameOver();
+        TimerOver();
 
+        
+
+
+    }
+
+    public void TimerOver()
+    {
         if (Timer.DONE)
         {
-            SceneManager.LoadScene("Win");
+            NextLevelPanel.SetActive(true);
+            Time.timeScale = 0f;
+           
         }
+        
+
     }
 
     public void GameOver()
@@ -57,9 +75,11 @@ public class GameManager : MonoBehaviour
             AudioManager.AudioManagerProp.PlaySFX(gameOverSFX,1);
 
             GOPanel.SetActive(true);
+
         }
         else
         {
+            NextLevelPanel.SetActive(false);
             GOPanel.SetActive(false);
         }
     }
@@ -85,7 +105,7 @@ public class GameManager : MonoBehaviour
     {
         AudioManager.AudioManagerProp.PlaySFX(clickBtn);
 
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(level);
         Time.timeScale = 1f;
         GameIsPaused = false;
         GOPanel.SetActive(false);
@@ -101,6 +121,7 @@ public class GameManager : MonoBehaviour
 
 
         pausePanel.SetActive(false);
+        NextLevelPanel.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
@@ -121,6 +142,32 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadScene(0);
         Time.timeScale = 1f;
+
+    }
+
+    public void NextLevel()
+    {
+        AudioManager.AudioManagerProp.PlaySFX(clickBtn);
+
+        
+
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+        GOPanel.SetActive(false);
+        pausePanel.SetActive(false);
+        NextLevelPanel.SetActive(false);
+
+        HealthBar.HP = 100;
+        
+        if (level == 4)
+        {
+            SceneManager.LoadScene(4);
+        }
+        else
+        {
+            SceneManager.LoadScene(level + 1);
+            
+        }
 
     }
 

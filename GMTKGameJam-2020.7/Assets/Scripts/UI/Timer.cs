@@ -13,9 +13,13 @@ public class Timer : MonoBehaviour
     int tiem;
     bool hasbeenS;
 
+    public int timeLength = 120;
+
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        START = true;
+        DONE = false;
         T = GetComponent<Text>();
         T.text = "";
 
@@ -28,13 +32,14 @@ public class Timer : MonoBehaviour
         {
             hasbeenS = true;
             tiem++;
-            int temp = 120 - (tiem / 60);
+            int temp = timeLength - (tiem / 60);
             T.text = temp + " seconds remain";
             if(temp == 0)
             {
+
                 DONE = true;
                 temp = 0;
-                //pause game
+                
             }
         }
 

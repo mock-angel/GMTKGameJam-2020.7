@@ -12,7 +12,7 @@ public class EnemySpawner : MonoBehaviour
     public bool GameStarted = false;
 
     [Tooltip("How much time to wait till tick ends and enemy spawns again.")]
-    [Range(0, 5)]
+    [Range(0, 10)]
     public float TickLength = 1;
 
     [Tooltip("How much enemy to spawn during next tick.")]

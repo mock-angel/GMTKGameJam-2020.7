@@ -20,6 +20,7 @@ public class HealthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        HP = 100;
         HEALTH = Health;
         PARROT = Parrot;
         HURT = Hurt;
