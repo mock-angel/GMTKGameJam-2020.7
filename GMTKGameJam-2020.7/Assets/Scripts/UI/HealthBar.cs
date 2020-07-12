@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
 
-    
-
     static public float HP = 100;
 
     public Slider Health;
@@ -16,13 +14,15 @@ public class HealthBar : MonoBehaviour
     public Text Parrot;
     static Text PARROT;
 
+    public AudioSource Hurt;
+    static AudioSource HURT;
 
     // Start is called before the first frame update
     void Start()
     {
         HEALTH = Health;
         PARROT = Parrot;
-
+        HURT = Hurt;
 
     }
 
@@ -36,7 +36,8 @@ public class HealthBar : MonoBehaviour
     public static void Damage(float D)
     {
         HEALTH.value -= D *0.01f;
-
+        HP = HEALTH.value;
+        HURT.Play();
         PARROT.text = Mathf.Round(HEALTH.value * 100) + "";
 
 

@@ -22,11 +22,16 @@ public class GameManager : MonoBehaviour
 
     public static bool GameIsPaused = false;
 
+    public static GameManager Instance {get; private set;}
 
-
-    // Start is called before the first frame update
+    void Awake(){
+        Instance = this;
+    }
+    
     void Start()
     {
+        Instance = this;
+
         GOPanel.SetActive(false);
         pausePanel.SetActive(false);
         AudioManager.AudioManagerProp.PlayMusic(music);
@@ -80,7 +85,7 @@ public class GameManager : MonoBehaviour
     {
         AudioManager.AudioManagerProp.PlaySFX(clickBtn);
 
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         Time.timeScale = 1f;
         GameIsPaused = false;
         GOPanel.SetActive(false);
@@ -114,7 +119,7 @@ public class GameManager : MonoBehaviour
     {
         AudioManager.AudioManagerProp.PlaySFX(clickBtn);
 
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
         Time.timeScale = 1f;
 
     }

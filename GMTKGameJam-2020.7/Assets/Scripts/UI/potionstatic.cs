@@ -23,14 +23,26 @@ public class potionstatic : MonoBehaviour
 
     public KeyCode[] PotionKeys;
 
-    public float[] Timer = new float[3];
-
     CircleCollider2D C;
 
+    public static potionstatic Instance {get; private set;}
+
+    public GameObject IndFire;
+    public Transform Next;
+    public GameObject FireParent;
+
+    bool[] Did = new bool[3];
+
+    public Image[] Pots;
+
+    void Awake(){
+        Instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+        Instance = this;
 
         PotCol[0] = Fire;
         PotCol[1] = Ice;
@@ -43,6 +55,9 @@ public class potionstatic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+
         for(int i = 0;i < CoolDown.Length; i++)
         {
             
@@ -53,12 +68,23 @@ public class potionstatic : MonoBehaviour
                 Use(i + 1);
             }
 
-            Timer[i] -= 1f / 60f / PotUseSeconds[i];
-            if (CoolDown[i].value >= 1)
+            if (CoolDown[i].value >= PotUseSeconds[i] / CoolDownSeconds[i])
             {
                 Effect[i].color = new Color(1,0,0,0);
-                Timer[i] = 0;
+
             }
+
+            if(CoolDown[i].value == 1 && !Did[i])
+            {
+                Effect[i].GetComponent<PotSelect>().DoHighlight = true;
+                Did[i] = true;
+            }
+
+            if (Did[i])
+            {
+                Pots[i].color = new Color(Pots[i].color.r, Pots[i].color.r, Pots[i].color.r, 0.65f);
+            }
+
         }
 
         if (Input.GetKeyDown(KeyCode.J) && CoolDown[0].value >= 1 )
@@ -87,18 +113,25 @@ public class potionstatic : MonoBehaviour
     public void Use(int ID)
     {
 
-
+        Instantiate(IndFire, Next.position, new Quaternion(0, 0, 0, 1), FireParent.transform);
 
         Effect[ID - 1].color = PotCol[ID - 1];
-        Timer[ID - 1] = 1;
-        print(Timer[ID - 1] + " is timer");
+
         Effect[ID - 1].GetComponent<PotSelect>().DoHighlight = true;
+        Did[ID - 1] = false;
 
     }
-
+    /*
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.tag == "Enemy" && Timer[0] != 0)
+        if(collision.tag == "Enemy" && CoolDown[0].value == 1)
+        {
+            collision.transform.Find("OnFire").GetComponent<SpriteRenderer>().color = Color.white;
+        }
+    }*/
+
+    public void OnTriggeredFireCircle(Collider2D collision){
+        if(collision.tag == "Enemy" && CoolDown[0].value <= PotUseSeconds[0] / CoolDownSeconds[0])
         {
             collision.transform.Find("OnFire").GetComponent<SpriteRenderer>().color = Color.white;
         }

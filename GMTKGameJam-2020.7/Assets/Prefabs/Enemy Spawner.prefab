@@ -48,12 +48,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cauldronBubbling: {fileID: 8300000, guid: 09d653fb4e35a614c837f0339fb30192, type: 3}
   GameStarted: 1
-  TickLength: 2.98
+  TickLength: 3
   EnemySpawnedPerTick: 1
   objectPooler: {fileID: 7216707765304889796}
   meleeEnemyString: Melee Golem
   rangedEnemyString: Ranged Wizard
   ScreenTint: {fileID: 0}
+  levelsAfterTick: 01000000020000000300000004000000050000000600000007000000
 --- !u!114 &7216707765304889796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,7 +76,8 @@ MonoBehaviour:
     prefab: {fileID: 0}
     size: 0
   - tag: Ranged Wizard
-    prefab: {fileID: 0}
+    prefab: {fileID: 1786651100856373336, guid: 7d125d1040c61fc43b25dae77aaeff4a,
+      type: 3}
     size: 0
 --- !u!212 &174170774
 SpriteRenderer:

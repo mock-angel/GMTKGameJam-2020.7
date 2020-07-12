@@ -15,11 +15,11 @@ TagManager:
   - 
   - 
   - Collision
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - IceLayer
+  - Player
+  - Bullet
+  - Firelayer
   - 
   - 
   - 
