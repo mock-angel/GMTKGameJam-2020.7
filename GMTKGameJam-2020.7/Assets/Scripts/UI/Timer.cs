@@ -11,12 +11,14 @@ public class Timer : MonoBehaviour
     static public bool DONE;
 
     int tiem;
+    bool hasbeenS;
 
     // Start is called before the first frame update
     void Start()
     {
         T = GetComponent<Text>();
         T.text = "";
+
     }
 
     // Update is called once per frame
@@ -24,15 +26,30 @@ public class Timer : MonoBehaviour
     {
         if (START)
         {
+            hasbeenS = true;
             tiem++;
             int temp = 180 - (tiem / 60);
             T.text = temp + " seconds remain";
             if(temp == 0)
             {
                 DONE = true;
+                temp = 0;
+                //pause game
             }
         }
 
+        if (GameManager.GameIsPaused == true)
+        {
+            START = false;
+        }
+        else
+        {
+            if (hasbeenS)
+            {
+                START = true;
+            }
+            
+        }
 
 
 

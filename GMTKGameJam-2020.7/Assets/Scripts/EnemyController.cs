@@ -103,6 +103,8 @@ public class EnemyController : MonoBehaviourPooledObject
             movement.x = Mathf.Sqrt(0.5f) * axis.x;
             movement.y = Mathf.Sqrt(0.5f) * axis.y;
         }
+
+        
     } 
 
 }
