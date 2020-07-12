@@ -31,6 +31,10 @@ public class potionstatic : MonoBehaviour
     public Transform Next;
     public GameObject FireParent;
 
+    bool[] Did = new bool[3];
+
+    public Image[] Pots;
+
     void Awake(){
         Instance = this;
     }
@@ -69,6 +73,18 @@ public class potionstatic : MonoBehaviour
                 Effect[i].color = new Color(1,0,0,0);
 
             }
+
+            if(CoolDown[i].value == 1 && !Did[i])
+            {
+                Effect[i].GetComponent<PotSelect>().DoHighlight = true;
+                Did[i] = true;
+            }
+
+            if (Did[i])
+            {
+                Pots[i].color = new Color(Pots[i].color.r, Pots[i].color.r, Pots[i].color.r, 0.65f);
+            }
+
         }
 
         if (Input.GetKeyDown(KeyCode.J) && CoolDown[0].value >= 1 )
@@ -102,6 +118,7 @@ public class potionstatic : MonoBehaviour
         Effect[ID - 1].color = PotCol[ID - 1];
 
         Effect[ID - 1].GetComponent<PotSelect>().DoHighlight = true;
+        Did[ID - 1] = false;
 
     }
     /*

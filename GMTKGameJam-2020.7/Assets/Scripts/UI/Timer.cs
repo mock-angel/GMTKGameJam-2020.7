@@ -28,7 +28,7 @@ public class Timer : MonoBehaviour
         {
             hasbeenS = true;
             tiem++;
-            int temp = 180 - (tiem / 60);
+            int temp = 120 - (tiem / 60);
             T.text = temp + " seconds remain";
             if(temp == 0)
             {

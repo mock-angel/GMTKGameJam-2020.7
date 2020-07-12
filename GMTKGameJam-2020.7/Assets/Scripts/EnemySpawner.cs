@@ -33,16 +33,18 @@ public class EnemySpawner : MonoBehaviour
 
     int totalTicks = 0;
 
+    [SerializeField]
+    GameObject Cobwebs;
 
     public List<int> levelsAfterTick;
 
     void Start(){
-        SpawnRangedEnemy();
+        //SpawnRangedEnemy();
     }
 
     void Update()
     {
-        if(GameStarted){
+        if(GameStarted && !PlayerMovement.Instance.dead){
             
             totalTime += Time.deltaTime;
             if(totalTime >= TickLength){
@@ -121,16 +123,16 @@ public class EnemySpawner : MonoBehaviour
                 break;
 
             case (2):
-                //set everything on fire
-                SetOnFire();
+                SpawnMeleeEnemy();
+                AudioManager.AudioManagerProp.PlaySFX(cauldronBubbling);
                 break;
             case (3):
                 //put poison tiles everywhere
-                SpillPoison();
+                Cobwebs.active = !Cobwebs.active;
                 break;
             case (4):
                 //put cobwebs everywhere
-                LitterCobWebs();
+                Cobwebs.active = !Cobwebs.active;
                 break;
             case (5):
                 Sign = (Random.Range(1, 2) == 1 ? 1 : -1);

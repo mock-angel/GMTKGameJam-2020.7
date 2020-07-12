@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField]
-    private float health;
+    //[SerializeField]
+    //[Range(0, 100)]
+    //private float health;
 
     [SerializeField]
+    [Range(0, 100)]
     private float golemDamage;
 
     [SerializeField]
@@ -35,13 +37,15 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject secondaryObjectToMove;
 
+    public bool dead = false;
+
     void Start(){
         Instance = this;
         gameObject.GetComponent<BoxCollider2D>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         audiosource = GetComponent<AudioSource>();
 
-
+        
     }
 
     void Awake(){
@@ -49,7 +53,9 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Update()
-    {
+    {   
+        if(dead) return;
+
         movement.x = axis.x = Input.GetAxisRaw("Horizontal");
         movement.y = axis.y = Input.GetAxisRaw("Vertical");
         
@@ -69,6 +75,23 @@ public class PlayerMovement : MonoBehaviour
             movement.y = Mathf.Sqrt(0.5f) * axis.y;
         }
         
+        //if player is dead
+        if (HealthBar.HP <= 0) 
+        {
+            rb.velocity = new Vector2(0, 0);
+            rb.MovePosition(transform.position);
+
+            transform.position = transform.position;
+
+            //Death Animation
+            animator.SetBool("IsDead", true);
+
+            //gameObject.GetComponent<SpriteRenderer>().enabled = false;
+
+            GameManager.GameIsPaused = true;
+            dead = true;
+        }
+
     }
     
     void FixedUpdate()
@@ -97,26 +120,10 @@ public class PlayerMovement : MonoBehaviour
 
 
         //Health points -=10
-        HealthBar.HP -= golemDamage;
+        //HealthBar.HP -= golemDamage;
 
         //play sound
         AudioManager.AudioManagerProp.PlaySFX(TakeDamgeSFX);
-
-
-        health -= golemDamage;
-
-        
-        //if player is dead
-        if (HealthBar.HP < 0 && health < 0) 
-        {
-            //Death Animation
-            animator.SetBool("IsDead", true);
-
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
-
-            GameManager.GameIsPaused = true;
-
-        }
     }
     
     public void OnDamageTaken(int damageFromBullet){
@@ -124,25 +131,11 @@ public class PlayerMovement : MonoBehaviour
         HealthBar.Damage(damageFromBullet);
 
         //Health points -=10
-        HealthBar.HP -= damageFromBullet;
+        //HealthBar.HP -= damageFromBullet;
 
         //play sound
-        AudioManager.AudioManagerProp.PlaySFX(TakeDamgeSFX);
-
-
-        health -= damageFromBullet;
-
         
-        //if player is dead
-        if (HealthBar.HP < 0 && health < 0) 
-        {
-            //Death Animation
-            animator.SetBool("IsDead", true);
-
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
-
-            GameManager.GameIsPaused = true;
-        }
+        AudioManager.AudioManagerProp.PlaySFX(TakeDamgeSFX);
     }
     /*
     private void OnTriggerStay2D(Collider2D collision)

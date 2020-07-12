@@ -43,7 +43,7 @@ public class FireSpread : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if(collision.tag == "Player" && Physics2D.Distance(collision,GetComponent<Collider2D>()).distance < 3)
         {
             HealthBar.Damage(5);
         }
@@ -53,7 +53,7 @@ public class FireSpread : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         Timer++;
-        if(Timer % 60 == 0 && collision.tag == "Player")
+        if(Timer % 60 == 0 && collision.tag == "Player" && Physics2D.Distance(collision, GetComponent<Collider2D>()).distance < 3)
         {
             HealthBar.Damage(5);
         }
