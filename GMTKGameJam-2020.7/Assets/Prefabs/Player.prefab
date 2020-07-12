@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1967596887
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1967596888}
+  - component: {fileID: 1967596889}
+  m_Layer: 11
+  m_Name: FireNext
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1967596888
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967596887}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3016930837014354099}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1967596889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967596887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad89980463dc30a4381d53140ad49e29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Radius: 3
+  Offset: {x: 0, y: 0}
 --- !u!1 &1144303380846146782
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,7 +145,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6200064374536161699
 Transform:
@@ -110,7 +155,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393485989845387644}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.013, y: -0.112, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3016930837014354099}
@@ -216,7 +261,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393485989845387644}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -261,7 +306,8 @@ GameObject:
   - component: {fileID: 3016930837014354096}
   - component: {fileID: 3016930837014354097}
   - component: {fileID: 5293895039279292814}
-  - component: {fileID: 919570509371795446}
+  - component: {fileID: 6560316942490112356}
+  - component: {fileID: 1377002639157530932}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -284,6 +330,7 @@ Transform:
   - {fileID: 6200064374536161699}
   - {fileID: 281114900584344026}
   - {fileID: 5124635505579854355}
+  - {fileID: 1967596888}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -519,7 +566,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!58 &919570509371795446
+--- !u!58 &6560316942490112356
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -534,7 +581,44 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.51
+  m_Radius: 0.25
+--- !u!114 &1377002639157530932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3016930837014354103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4bcab628f0956942ace6b18fefc3146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePotionSFX: {fileID: 8300000, guid: 8deb700a0ddb65e418b72a833e9731e3, type: 3}
+  IcePotionSFX: {fileID: 8300000, guid: df9aa7204cda53f47bb47590da49e71b, type: 3}
+  Effect:
+  - {fileID: 8074439119888917287}
+  - {fileID: 2483752193644711535}
+  - {fileID: 4219578328581211087}
+  CoolDown:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  CoolDownSeconds:
+  - 5
+  - 6
+  - 10
+  PotUseSeconds:
+  - 2
+  - 6
+  - 10
+  Fire: {r: 1, g: 1, b: 1, a: 1}
+  Ice: {r: 1, g: 1, b: 1, a: 1}
+  Air: {r: 1, g: 1, b: 1, a: 1}
+  PotionKeys: 6a0000006b0000006c000000
+  IndFire: {fileID: 0}
+  Next: {fileID: 1967596888}
+  FireParent: {fileID: 0}
 --- !u!1 &3426147852688736981
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,7 +631,9 @@ GameObject:
   - component: {fileID: 8074439119888917287}
   - component: {fileID: 2668364769343961126}
   - component: {fileID: 1737084851206026129}
-  m_Layer: 11
+  - component: {fileID: 3044169747750077985}
+  - component: {fileID: 6823161686329931620}
+  m_Layer: 13
   m_Name: Fire Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -562,7 +648,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3426147852688736981}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.013, y: -0.112, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3016930837014354099}
@@ -660,6 +746,34 @@ MonoBehaviour:
   - {fileID: 0}
   Halo: {fileID: 5015440294887643657}
   DoHighlight: 0
+--- !u!58 &3044169747750077985
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3426147852688736981}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.51
+--- !u!114 &6823161686329931620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3426147852688736981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2db1396adbcccf3a9489e43cee08c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4708696490292412508
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,11 +23,13 @@ public class potionstatic : MonoBehaviour
 
     public KeyCode[] PotionKeys;
 
-    public float[] Timer = new float[3];
-
     CircleCollider2D C;
 
     public static potionstatic Instance {get; private set;}
+
+    public GameObject IndFire;
+    public Transform Next;
+    public GameObject FireParent;
 
     void Awake(){
         Instance = this;
@@ -49,6 +51,9 @@ public class potionstatic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+
         for(int i = 0;i < CoolDown.Length; i++)
         {
             
@@ -59,11 +64,10 @@ public class potionstatic : MonoBehaviour
                 Use(i + 1);
             }
 
-            Timer[i] -= 1f / 60f / PotUseSeconds[i];
-            if (CoolDown[i].value >= 1)
+            if (CoolDown[i].value >= PotUseSeconds[i] / CoolDownSeconds[i])
             {
                 Effect[i].color = new Color(1,0,0,0);
-                Timer[i] = 0;
+
             }
         }
 
@@ -93,25 +97,24 @@ public class potionstatic : MonoBehaviour
     public void Use(int ID)
     {
 
-
+        Instantiate(IndFire, Next.position, new Quaternion(0, 0, 0, 1), FireParent.transform);
 
         Effect[ID - 1].color = PotCol[ID - 1];
-        Timer[ID - 1] = 1;
-        print(Timer[ID - 1] + " is timer");
+
         Effect[ID - 1].GetComponent<PotSelect>().DoHighlight = true;
 
     }
     /*
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.tag == "Enemy" && Timer[0] != 0)
+        if(collision.tag == "Enemy" && CoolDown[0].value == 1)
         {
             collision.transform.Find("OnFire").GetComponent<SpriteRenderer>().color = Color.white;
         }
     }*/
 
     public void OnTriggeredFireCircle(Collider2D collision){
-        if(collision.tag == "Enemy" && Timer[0] != 0)
+        if(collision.tag == "Enemy" && CoolDown[0].value <= PotUseSeconds[0] / CoolDownSeconds[0])
         {
             collision.transform.Find("OnFire").GetComponent<SpriteRenderer>().color = Color.white;
         }

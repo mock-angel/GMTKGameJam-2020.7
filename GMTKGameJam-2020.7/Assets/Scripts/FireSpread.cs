@@ -6,13 +6,11 @@ public class FireSpread : MonoBehaviour
 {
 
     int Timer,Timer2;
-    Transform Spread;
 
     // Start is called before the first frame update
     void Start()
     {
-        Spread = transform;
-        Spread.position = new Vector3(Random.Range(-0.5f, 0.5f) + Spread.position.x, Random.Range(-0.5f, 0.5f) + Spread.position.y, Spread.position.z);
+
     }
 
     // Update is called once per frame
@@ -20,14 +18,16 @@ public class FireSpread : MonoBehaviour
     {
         Timer2++;
 
-        if(Timer % 1 == 0)
+        if(Timer2 % 600 == 0)
         {
-            if(Random.Range(1,3) == 2)
+            if(Random.Range(1,5) == 2)
             {
-                Instantiate(gameObject, Spread);
 
 
 
+                //Instantiate(transform.Find("Next").transform , transform.parent);
+                Instantiate(gameObject, transform.Find("Next").transform.position, new Quaternion(0, 0, 0, 1), transform.parent);
+                
 
             }
 
@@ -53,7 +53,7 @@ public class FireSpread : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         Timer++;
-        if(Timer % 60 == 0)
+        if(Timer % 60 == 0 && collision.tag == "Player")
         {
             HealthBar.Damage(5);
         }

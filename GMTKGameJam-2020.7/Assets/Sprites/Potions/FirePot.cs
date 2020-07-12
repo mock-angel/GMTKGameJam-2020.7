@@ -38,9 +38,10 @@ public class FirePot : MonoBehaviour
             S.sprite = Frames[FrameTracker];
 
         }
-
+        
         if (IsOnFire && S.color == Color.white)
         {
+            
             Timer2++;
             if(Timer2 > BurnFrames)
             {

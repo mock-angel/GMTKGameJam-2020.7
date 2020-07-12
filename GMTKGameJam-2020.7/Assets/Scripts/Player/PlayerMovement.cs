@@ -144,10 +144,10 @@ public class PlayerMovement : MonoBehaviour
             GameManager.GameIsPaused = true;
         }
     }
-
+    /*
     private void OnTriggerStay2D(Collider2D collision)
     {
         potionstatic.Instance.OnTriggeredFireCircle(collision);
     }
-
+    */
 }
