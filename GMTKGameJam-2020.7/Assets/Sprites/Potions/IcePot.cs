@@ -25,9 +25,16 @@ public class IcePot : MonoBehaviour
     void Update()
     {
         Timer++;
-        if(stat.Timer[1] > 0.95f)
+        if (stat.CoolDown[1].value > 0.95f)
         {
             FrameTracker = 0;
+            transform.parent.GetComponent<PlayerMovement>().enabled = true;
+            transform.parent.GetComponent<CircleCollider2D>().isTrigger = true;
+        }
+        else
+        {
+            transform.parent.GetComponent<PlayerMovement>().enabled = false;
+            transform.parent.GetComponent<CircleCollider2D>().isTrigger = false;
         }
 
         if (Timer % (60f / Fps) == 0)
@@ -42,7 +49,7 @@ public class IcePot : MonoBehaviour
         }
 
 
-        S.color = new Color(1, 1, 1, stat.Timer[1]);
+        S.color = new Color(1, 1, 1, 1 - stat.CoolDown[1].value);
 
 
     }

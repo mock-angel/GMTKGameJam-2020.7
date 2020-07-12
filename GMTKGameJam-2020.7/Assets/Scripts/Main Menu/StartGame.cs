@@ -8,7 +8,7 @@ public class StartGame : MonoBehaviour
 
     public void Clicked()
     {
-        SceneManager.LoadScene("Player Test");
+        SceneManager.LoadScene(0);
 
     }
 }

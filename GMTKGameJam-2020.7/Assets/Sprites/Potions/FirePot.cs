@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class FirePot : MonoBehaviour
 {
-    public potionstatic stat;
+
     public Sprite[] Frames;
 
-    int Timer;
+    int Timer,Timer2;
     public float Fps;
 
-    SpriteRenderer S,B;
+    SpriteRenderer S;
     int FrameTracker;
+
+    public bool IsOnFire;
+    public float BurnFrames;
 
     // Start is called before the first frame update
     void Start()
     {
         S = GetComponent<SpriteRenderer>();
-        B = transform.Find("Base").GetComponent<SpriteRenderer>();
         S.sprite = Frames[0];
     }
 
@@ -37,8 +39,17 @@ public class FirePot : MonoBehaviour
 
         }
 
-        B.color = new Color(stat.Timer[0], 0, 0,stat.Timer[0]/2);
+        if (IsOnFire && S.color == Color.white)
+        {
+            Timer2++;
+            if(Timer2 > BurnFrames)
+            {
+                GameObject.Destroy(transform.parent.gameObject);
+            }
+            transform.parent.GetComponent<SpriteRenderer>().color -= new Color(1f/BurnFrames, 1f / BurnFrames, 1f / BurnFrames, 0);
 
+        }
 
     }
+
 }

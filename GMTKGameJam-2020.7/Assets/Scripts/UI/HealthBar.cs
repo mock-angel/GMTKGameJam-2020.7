@@ -13,12 +13,15 @@ public class HealthBar : MonoBehaviour
     public Slider Health;
     static Slider HEALTH;
 
+    public Text Parrot;
+    static Text PARROT;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        HEALTH = Health;   
-
+        HEALTH = Health;
+        PARROT = Parrot;
 
 
     }
@@ -34,7 +37,7 @@ public class HealthBar : MonoBehaviour
     {
         HEALTH.value -= D *0.01f;
 
-        
+        PARROT.text = Mathf.Round(HEALTH.value * 100) + "";
 
 
     }

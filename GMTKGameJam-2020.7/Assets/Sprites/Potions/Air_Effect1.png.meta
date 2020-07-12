@@ -50,6 +50,78 @@ TextureImporter:
   - first:
       213: -3719175969163019266
     second: Air_Effect1_15
+  - first:
+      213: 4047227765760367974
+    second: Air_Effect1_0
+  - first:
+      213: 7779781125688607279
+    second: Air_Effect1_1
+  - first:
+      213: 7899591816777469953
+    second: Air_Effect1_2
+  - first:
+      213: 4649012798172776992
+    second: Air_Effect1_3
+  - first:
+      213: 4664041453935999680
+    second: Air_Effect1_4
+  - first:
+      213: -7785926753347215482
+    second: Air_Effect1_5
+  - first:
+      213: -9063421404932673776
+    second: Air_Effect1_6
+  - first:
+      213: -2754984368011465437
+    second: Air_Effect1_7
+  - first:
+      213: 8661801090953408872
+    second: Air_Effect1_8
+  - first:
+      213: 5713851886810468579
+    second: Air_Effect1_9
+  - first:
+      213: -8199618578647204821
+    second: Air_Effect1_10
+  - first:
+      213: -5333440821553440587
+    second: Air_Effect1_11
+  - first:
+      213: 8659799903923725960
+    second: Air_Effect1_12
+  - first:
+      213: 5106390520254887985
+    second: Air_Effect1_13
+  - first:
+      213: -4454942466115157137
+    second: Air_Effect1_14
+  - first:
+      213: 6918560288812995699
+    second: Air_Effect1_15
+  - first:
+      213: -4410925042646675444
+    second: Air_Effect1_16
+  - first:
+      213: 4280671724265802757
+    second: Air_Effect1_17
+  - first:
+      213: -9032209537099127886
+    second: Air_Effect1_18
+  - first:
+      213: 1633620077196299779
+    second: Air_Effect1_19
+  - first:
+      213: 215674055701039489
+    second: Air_Effect1_20
+  - first:
+      213: 814312610134884280
+    second: Air_Effect1_21
+  - first:
+      213: -6880186474171952018
+    second: Air_Effect1_22
+  - first:
+      213: 3088074073338179669
+    second: Air_Effect1_23
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -79,12 +151,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -93,7 +165,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -163,9 +235,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 120
-        width: 40
-        height: 40
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,8 +245,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84971be3fc9682110800000000000000
-      internalID: 1236354436544166216
+      spriteID: 66d9e37b534aa2830800000000000000
+      internalID: 4047227765760367974
       vertices: []
       indices: 
       edges: []
@@ -183,10 +255,10 @@ TextureImporter:
       name: Air_Effect1_1
       rect:
         serializedVersion: 2
-        x: 40
-        y: 120
-        width: 40
-        height: 40
+        x: 32
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,8 +266,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4d6cbf4dc2c267b0800000000000000
-      internalID: -5232405629989262005
+      spriteID: f2245faf6b557fb60800000000000000
+      internalID: 7779781125688607279
       vertices: []
       indices: 
       edges: []
@@ -204,10 +276,10 @@ TextureImporter:
       name: Air_Effect1_2
       rect:
         serializedVersion: 2
-        x: 80
-        y: 120
-        width: 40
-        height: 40
+        x: 64
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,8 +287,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f9b101b81b0b2150800000000000000
-      internalID: 5848780741747522034
+      spriteID: 1009a9d47ecf0ad60800000000000000
+      internalID: 7899591816777469953
       vertices: []
       indices: 
       edges: []
@@ -225,10 +297,10 @@ TextureImporter:
       name: Air_Effect1_3
       rect:
         serializedVersion: 2
-        x: 120
-        y: 120
-        width: 40
-        height: 40
+        x: 96
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,8 +308,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 628a45d58f1f6dd70800000000000000
-      internalID: 9067700948777084966
+      spriteID: 02a4557228c948040800000000000000
+      internalID: 4649012798172776992
       vertices: []
       indices: 
       edges: []
@@ -246,10 +318,10 @@ TextureImporter:
       name: Air_Effect1_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 80
-        width: 40
-        height: 40
+        x: 128
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,8 +329,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e5034364d03df230800000000000000
-      internalID: 3674146559760729569
+      spriteID: 0ca3d8fbdf00ab040800000000000000
+      internalID: 4664041453935999680
       vertices: []
       indices: 
       edges: []
@@ -267,10 +339,10 @@ TextureImporter:
       name: Air_Effect1_5
       rect:
         serializedVersion: 2
-        x: 40
-        y: 80
-        width: 40
-        height: 40
+        x: 0
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,8 +350,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3cdb954a9fdeb460800000000000000
-      internalID: 7259485503053618239
+      spriteID: 68f57839ed4d2f390800000000000000
+      internalID: -7785926753347215482
       vertices: []
       indices: 
       edges: []
@@ -288,10 +360,10 @@ TextureImporter:
       name: Air_Effect1_6
       rect:
         serializedVersion: 2
-        x: 80
-        y: 80
-        width: 40
-        height: 40
+        x: 32
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -299,8 +371,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 643779f147d6479a0800000000000000
-      internalID: -6236239238487641274
+      spriteID: 01fe0559042483280800000000000000
+      internalID: -9063421404932673776
       vertices: []
       indices: 
       edges: []
@@ -309,10 +381,10 @@ TextureImporter:
       name: Air_Effect1_7
       rect:
         serializedVersion: 2
-        x: 120
-        y: 80
-        width: 40
-        height: 40
+        x: 64
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -320,8 +392,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69811bfe973fcf6e0800000000000000
-      internalID: -1802298045817087850
+      spriteID: 32d2ce6505454c9d0800000000000000
+      internalID: -2754984368011465437
       vertices: []
       indices: 
       edges: []
@@ -330,10 +402,10 @@ TextureImporter:
       name: Air_Effect1_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 40
-        width: 40
-        height: 40
+        x: 96
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -341,8 +413,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9e4486b476ae9ee0800000000000000
-      internalID: -1252380626153877859
+      spriteID: 8617e553336e43870800000000000000
+      internalID: 8661801090953408872
       vertices: []
       indices: 
       edges: []
@@ -351,10 +423,10 @@ TextureImporter:
       name: Air_Effect1_9
       rect:
         serializedVersion: 2
-        x: 40
-        y: 40
-        width: 40
-        height: 40
+        x: 128
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -362,8 +434,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5598dd4905a5f6990800000000000000
-      internalID: -7390589161350264491
+      spriteID: 3e0988c840eab4f40800000000000000
+      internalID: 5713851886810468579
       vertices: []
       indices: 
       edges: []
@@ -372,10 +444,10 @@ TextureImporter:
       name: Air_Effect1_10
       rect:
         serializedVersion: 2
-        x: 80
-        y: 40
-        width: 40
-        height: 40
+        x: 0
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -383,8 +455,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbb0e0d49294817a0800000000000000
-      internalID: -6406290028199277633
+      spriteID: b2c3a0e985a153e80800000000000000
+      internalID: -8199618578647204821
       vertices: []
       indices: 
       edges: []
@@ -393,10 +465,10 @@ TextureImporter:
       name: Air_Effect1_11
       rect:
         serializedVersion: 2
-        x: 120
-        y: 40
-        width: 40
-        height: 40
+        x: 32
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -404,8 +476,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de5edbff95a99c320800000000000000
-      internalID: 2578761972979721709
+      spriteID: 5b85db0a4dfcbf5b0800000000000000
+      internalID: -5333440821553440587
       vertices: []
       indices: 
       edges: []
@@ -414,10 +486,10 @@ TextureImporter:
       name: Air_Effect1_12
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 40
-        height: 40
+        x: 64
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -425,8 +497,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19d0d7df35e57f600800000000000000
-      internalID: 501973598303227281
+      spriteID: 886e55b812acd2870800000000000000
+      internalID: 8659799903923725960
       vertices: []
       indices: 
       edges: []
@@ -435,10 +507,10 @@ TextureImporter:
       name: Air_Effect1_13
       rect:
         serializedVersion: 2
-        x: 40
-        y: 0
-        width: 40
-        height: 40
+        x: 96
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -446,8 +518,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 797c71d8b71fe2da0800000000000000
-      internalID: -5967566943268911209
+      spriteID: 138f6349f1b8dd640800000000000000
+      internalID: 5106390520254887985
       vertices: []
       indices: 
       edges: []
@@ -456,10 +528,10 @@ TextureImporter:
       name: Air_Effect1_14
       rect:
         serializedVersion: 2
-        x: 80
-        y: 0
-        width: 40
-        height: 40
+        x: 128
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -467,8 +539,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85d2b8db7d321cf20800000000000000
-      internalID: 3441070999792725336
+      spriteID: f63476c2e6ddc22c0800000000000000
+      internalID: -4454942466115157137
       vertices: []
       indices: 
       edges: []
@@ -477,10 +549,10 @@ TextureImporter:
       name: Air_Effect1_15
       rect:
         serializedVersion: 2
-        x: 120
-        y: 0
-        width: 40
-        height: 40
+        x: 0
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -488,8 +560,176 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: efb7edc3925d26cc0800000000000000
-      internalID: -3719175969163019266
+      spriteID: 37492d33de9a30060800000000000000
+      internalID: 6918560288812995699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Air_Effect1_16
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c009b263b0f39c2c0800000000000000
+      internalID: -4410925042646675444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Air_Effect1_17
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50c0ce4d040086b30800000000000000
+      internalID: 4280671724265802757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Air_Effect1_18
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b3af4cd74527a280800000000000000
+      internalID: -9032209537099127886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Air_Effect1_19
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30e4b3f0ec8cba610800000000000000
+      internalID: 1633620077196299779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Air_Effect1_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1890455396a3ef200800000000000000
+      internalID: 215674055701039489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Air_Effect1_21
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bff53721050d4b00800000000000000
+      internalID: 814312610134884280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Air_Effect1_22
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e649882cadaa480a0800000000000000
+      internalID: -6880186474171952018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Air_Effect1_23
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5507a65220b0bda20800000000000000
+      internalID: 3088074073338179669
       vertices: []
       indices: 
       edges: []
