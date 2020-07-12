@@ -421,9 +421,10 @@ MonoBehaviour:
   TakeDamgeSFX: {fileID: 8300000, guid: 07b15d61401b7484ab4786b1dd301a7e, type: 3}
   WalkSFX: {fileID: 8300000, guid: db71fb96f6dd5f44fa3b52f4d3535363, type: 3}
   Walking: 0
-  moveSpeed: 8
+  moveSpeed: 4
   animator: {fileID: 3016930837014354096}
   secondaryObjectToMove: {fileID: 1393485989845387644}
+  dead: 0
 --- !u!95 &3016930837014354096
 Animator:
   serializedVersion: 3
@@ -609,7 +610,7 @@ MonoBehaviour:
   - 10
   PotUseSeconds:
   - 2
-  - 6
+  - 10
   - 10
   Fire: {r: 1, g: 1, b: 1, a: 1}
   Ice: {r: 1, g: 1, b: 1, a: 1}
@@ -618,6 +619,7 @@ MonoBehaviour:
   IndFire: {fileID: 0}
   Next: {fileID: 1967596888}
   FireParent: {fileID: 0}
+  Pots: []
 --- !u!1 &3426147852688736981
 GameObject:
   m_ObjectHideFlags: 0

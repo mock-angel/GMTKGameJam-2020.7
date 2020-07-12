@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cachedSpriteRenderer: {fileID: 0}
-  speed: 2
+  speed: 7000
   destinationSetter: {fileID: 2346647386690624736}
   targetPosition: {fileID: 0}
   seeker: {fileID: -8378442809511740899}

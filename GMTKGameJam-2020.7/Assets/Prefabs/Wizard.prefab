@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2918573586679230712}
   - component: {fileID: 2310174059308269493}
   - component: {fileID: -7259240398391328935}
+  - component: {fileID: 6892380447396220705}
   m_Layer: 9
   m_Name: Wizard
   m_TagString: Enemy
@@ -150,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cachedSpriteRenderer: {fileID: 0}
-  speed: 2
+  speed: 4000
   destinationSetter: {fileID: 2918573586679230712}
   targetPosition: {fileID: 0}
   seeker: {fileID: 7194874616317982107}
@@ -214,6 +215,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.19963475, y: 0.31279552}
   m_EdgeRadius: 0
+--- !u!50 &6892380447396220705
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786651100856373336}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1963502617784086009
 GameObject:
   m_ObjectHideFlags: 0

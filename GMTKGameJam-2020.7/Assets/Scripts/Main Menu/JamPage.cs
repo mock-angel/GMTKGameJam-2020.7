@@ -15,6 +15,7 @@ public class JamPage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         Active = Main.localPosition;
         Innactive = Page.localPosition;
     }

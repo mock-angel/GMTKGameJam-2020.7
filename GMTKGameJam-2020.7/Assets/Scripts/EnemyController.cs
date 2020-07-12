@@ -20,11 +20,14 @@ public class EnemyController : MonoBehaviourPooledObject
 
     private bool reachedEndOfPath = false;
 
+    Rigidbody2D rb;
+
     void Start(){
 
         destinationSetter.target = targetPosition;
 
         InvokeRepeating("UpdatePath", 0f, .5f);
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void UpdatePath(){
@@ -46,15 +49,53 @@ public class EnemyController : MonoBehaviourPooledObject
     private Vector3 movement;
     private Vector3 axis;
 
-    void Update()
+    void FixedUpdate()
     {   
         if (path == null) {
             // We have no path to follow yet, so don't do anything
             return;
         }
+        
+        if(currentWaypoint >= path.vectorPath.Count)
+            reachedEndOfPath = true;
+        else reachedEndOfPath = false;
+        
+
+        if(reachedEndOfPath) return;
+        
+        Vector2 direction = ((Vector2) path.vectorPath[currentWaypoint] - rb.position).normalized;
+        Vector2 force = direction * speed * Time.deltaTime;
+        
+        //transform.position = transform.position;
+
+        rb.velocity = new Vector2(0, 0);
+        rb.AddForce(force);
+
+        float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+
+        if(distance < nextWaypointDistance)
+            currentWaypoint++;
 
 
-        reachedEndOfPath = false;
+        //Animation
+        movement.x = axis.x = direction.x;
+        movement.y = axis.y = direction.y;
+
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        //animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        if (Mathf.Abs(axis.x) == 1 && Mathf.Abs(axis.y) == 1)
+        {
+            movement.x = Mathf.Sqrt(0.5f) * axis.x;
+            movement.y = Mathf.Sqrt(0.5f) * axis.y;
+        }
+
+
+        //reachedEndOfPath = false;
+        return;
+
+        //Method 2.
 
         float distanceToWaypoint;
         while (true) {
@@ -75,27 +116,16 @@ public class EnemyController : MonoBehaviourPooledObject
 
         var speedFactor = reachedEndOfPath ? Mathf.Sqrt(distanceToWaypoint/nextWaypointDistance) : 1f;
 
-        Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
+        Vector3 dir = (path.vectorPath[currentWaypoint] - (Vector3)transform.position).normalized;
 
         Vector3 velocity = dir * speed * speedFactor;
 
         transform.position += velocity * Time.deltaTime;
+        
+        //rb.MovePosition(rb.position + (Vector2)velocity * Time.deltaTime);
 
 
-        //Animation
-        movement.x = axis.x = dir.x;
-        movement.y = axis.y = dir.y;
-
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        //animator.SetFloat("Speed", movement.sqrMagnitude);
-
-        if (Mathf.Abs(axis.x) == 1 && Mathf.Abs(axis.y) == 1)
-        {
-            movement.x = Mathf.Sqrt(0.5f) * axis.x;
-            movement.y = Mathf.Sqrt(0.5f) * axis.y;
-        }
-
+        
         
     } 
 
